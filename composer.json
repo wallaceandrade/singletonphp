@@ -1,0 +1,19 @@
+{
+    "name": "wallaceandrade/singletonphp",
+    "description": "Easily manage the singleton instances of your application",
+    "authors": [
+        {
+            "name": "Wallace Magalhães",
+            "email": "inbox.wallaceandrade@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "WallaceAndrade\\": "src/wallacem/"
+        }
+    }
+}
