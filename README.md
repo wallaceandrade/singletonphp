@@ -29,7 +29,7 @@ $fooInstance = Singleton::resolve(Foo::class, 1);`
 ```
 Reuses the Foo instance since it was also built with $bar = 1;
 ```php
-`$otherFooInstance = Singleton::resolve(Foo::class, 1);`
+$otherFooInstance = Singleton::resolve(Foo::class, 1);`
 ```
 Make a new Foo instance since $bar = 2 
 ```php
