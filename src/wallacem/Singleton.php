@@ -1,23 +1,18 @@
 <?php
 namespace WallaceAndrade;
 
-class Singleton 
+class Singleton
 {
-    private $instances;
-
-    public function __construct()
+    public static function resolve($className, ...$constructArgs)
     {
-        $GLOBALS['singletonInstances'] = [];
-        $this->instances = &$GLOBALS['singletonIstances'];
-    }
-
-    public function resolve($className, ...$constructArgs)
-    {
+        if (!isset($GLOBALS['singletonInstances'])) {
+            $GLOBALS['singletonInstances'] = [];
+        }
+        $instances = &$GLOBALS['singletonInstances'];
         $instanceHash = md5($className.serialize($constructArgs));
-
-        if (!isset($this->instances[$instanceHash])) 
-            $this->instances[$instanceHash] = (new $className(...$constructArgs));
         
-        return $this->instances[$instanceHash];
+        if (!isset($instances[$instanceHash]))
+            $instances[$instanceHash] = (new $className(...$constructArgs));
+        return $instances[$instanceHash];
     }
 }
