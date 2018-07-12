@@ -8,8 +8,8 @@ Ideal for reusing instances of objects in your application using singleton. It d
 
 # How to use
 
-
-`class Foo 
+`
+class Foo 
 {
     public function __construct($bar = 1) {
         ...
@@ -23,13 +23,13 @@ Ideal for reusing instances of objects in your application using singleton. It d
 }
 `
 
-// Make a new instance of Foo with $bar = 1
+Make a new instance of Foo with $bar = 1
 `$fooInstance = Singleton::resolve(Foo::class, 1);`
 
-// Reuses the Foo instance since it was also built with $bar = 1;
+Reuses the Foo instance since it was also built with $bar = 1;
 `$otherFooInstance = Singleton::resolve(Foo::class, 1);`
 
-// Make a new Foo instance since $bar = 2 
+Make a new Foo instance since $bar = 2 
 
 `$moreFooInstance = Singleton::resolve(Foo::class, 2);`
 
