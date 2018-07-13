@@ -23,16 +23,14 @@ class Foo
 }
 ```
 
-Make a new instance of Foo with $bar = 1
 ```php
+// Make a new instance of Foo with $bar = 1
 $fooInstance = Singleton::resolve(Foo::class, 1);`
-```
-Reuses the Foo instance since it was also built with $bar = 1;
-```php
+
+// Reuses the Foo instance since it was also built with $bar = 1;
 $otherFooInstance = Singleton::resolve(Foo::class, 1);`
-```
-Make a new Foo instance since $bar = 2 
-```php
+
+// Make a new Foo instance since $bar = 2 
 $moreFooInstance = Singleton::resolve(Foo::class, 2);`
 ```
 
